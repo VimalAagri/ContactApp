@@ -15,14 +15,16 @@ class MainActivity2 : AppCompatActivity() {
         // Retrieving data passed from MainActivity
         val imageResourceId = intent.getIntExtra("image", 0)
         val name = intent.getStringExtra("name")
-
+        val number = intent.getStringExtra("number")
         // Setting up views
         val imageView = findViewById<ImageView>(R.id.imageView2)
         val nameTextView = findViewById<TextView>(R.id.textView3)
+        val numberTextView= findViewById<TextView>(R.id.showNumber)
 
         // Binding data to views
         imageView.setImageResource(imageResourceId)
         nameTextView.text = name
+        numberTextView.text=number
 
     }
 }

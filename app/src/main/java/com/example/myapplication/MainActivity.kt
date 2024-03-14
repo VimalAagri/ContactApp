@@ -20,12 +20,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val contactList = listOf(
-            contactModel(R.drawable.image1,"Vimal"),
-            contactModel(R.drawable.image2,"Rahul"),
-            contactModel(R.drawable.image3,"Rakesh"),
-            contactModel(R.drawable.image4,"Vijay"),
-            contactModel(R.drawable.image5,"Shikhar"),
-            contactModel(R.drawable.image6,"Gaurav")
+            contactModel(R.drawable.image1,"Vimal","724526849"),
+            contactModel(R.drawable.image2,"Rahul","924526844"),
+            contactModel(R.drawable.image3,"Rakesh","7526849415"),
+            contactModel(R.drawable.image4,"Vijay","725294322"),
+            contactModel(R.drawable.image5,"Shikhar","722346543"),
+            contactModel(R.drawable.image6,"Gaurav","7232434567")
         )
 
         val listView = findViewById<ListView>(R.id.listView)
@@ -37,12 +37,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity2::class.java).apply {
                 putExtra("image", item.image)
                 putExtra("name", item.name)
+                putExtra("number",item.number)
             }
             startActivity(intent)
         }
     }
 
-    data class contactModel(var image: Int , var name: String)
+    data class contactModel(var image: Int , var name: String, var number:String)
 
     private class ContactAdapter(context: Context, contacts: List<contactModel>) :
         ArrayAdapter<contactModel>(context, 0, contacts) {
